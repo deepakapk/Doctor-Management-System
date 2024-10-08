@@ -16,7 +16,7 @@ const Login = () => {
   const handleLogin = async(e) => {
     e.preventDefault()
     try{
-      const response = await axios.post("http://localhost:4000/api/v1/user/login",{email,password, confirmPassword, role:"Admin"},{withCredentials:true, headers:{"Content-Type":"application/json"}})
+      const response = await axios.post("https://doctor-management-system.onrender.com/api/v1/user/login",{email,password, confirmPassword, role:"Admin"},{withCredentials:true, headers:{"Content-Type":"application/json"}})
       toast.success(response.data.message)
       setIsAuthenticated(true)
       navigateTo("/")
